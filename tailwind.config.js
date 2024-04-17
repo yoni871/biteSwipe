@@ -20,10 +20,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        pblack: ["ProximaNova-Black", "serif"],
-        pbold: ["ProximaNova-Bold", "serif"],
-        plight: ["ProximaNova-Light", "serif"],
-        pregular: ["ProximaNova-Regular", "serif"]
+        pblack: ["ProximaNova-Black", "sans-serif"],
+        pbold: ["ProximaNova-Bold", "sans-serif"],
+        plight: ["ProximaNova-Light", "sans-serif"],
+        pregular: ["ProximaNova-Regular", "sans-serif"]
       },
     },
   },
