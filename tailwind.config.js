@@ -4,20 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#504D57',
-        secondary: {
-          DEFAULT: "#FF9C01",
-          100: "#FF9001",
-          200: "#FF8E01",
-        },
-        black: {
-          DEFAULT: "#000",
-          100: "#1E1E2D",
-          200: "#232533",
-        },
-        gray: {
-          100: "#CDCDE0",
-        },
+        primary: "#E1D5CA",
+        secondary: "#202224",
+        white: "#F4F4F5",
+        gold: {
+          DEFAULT: "#C49450",
+          bright: "#FFBF10"
+        }
       },
       fontFamily: {
         pblack: ["ProximaNova-Black", "sans-serif"],

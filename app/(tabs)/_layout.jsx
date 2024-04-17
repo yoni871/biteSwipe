@@ -10,7 +10,7 @@ const TabIcon = ({ icon, color, focused }) => {
         source={icon}
         resizeMode='contain'
         tintColor={color}
-        className="w-8 h-8"
+        className="w-7 h-7"
       />
     </View>
   )
@@ -21,7 +21,13 @@ const TabsLayout = () => {
     <>
       <Tabs
         screenOptions={{
-          tabBarShowLabel: false
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: "#E0AFA0",
+          tabBarInactiveTintColor: "#BCB8B1",
+          tabBarStyle: {
+            backgroundColor: "#8A817C",
+            height: 80,
+          }
         }}
       >
         <Tabs.Screen 
