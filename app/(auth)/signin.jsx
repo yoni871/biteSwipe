@@ -52,7 +52,7 @@ const SignIn = () => {
           />
 
           <CustomButton 
-            title="LOG IN"
+            title="Log In"
             handlePress={Submit}
             containerStyles="mt-8"
             isLoading={isSumbitting}
@@ -62,7 +62,7 @@ const SignIn = () => {
             <Text className="text-lg font-pbold text-white">
               Don't have an account?{" "}
             </Text>
-            <Link push href="/signup" className="text-lg font-pbold text-gold-light underline">SIGN UP</Link>
+            <Link push href="/signup" className="text-lg font-pbold text-gold-light underline">Sign Up</Link>
           </View>
         </View>
       </ScrollView>
