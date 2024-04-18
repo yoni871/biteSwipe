@@ -4,12 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#E1D5CA",
-        secondary: "#202224",
+        primary: {
+          DEFAULT: "#202224",
+          light: "#36383A"
+        },
+        secondary: "#E1D5CA",
         white: "#F4F4F5",
         gold: {
           DEFAULT: "#C49450",
-          bright: "#FFBF10"
+          light: "#FFBF10"
         }
       },
       fontFamily: {
