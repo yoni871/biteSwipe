@@ -1,31 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
 import { Text, ScrollView , View, Image } from 'react-native';
-import { Link } from 'expo-router';
+import { Redirect, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { images } from '../constants';
 import { CustomButton } from '../components';
 
 export default function App() {
   return (
-    <SafeAreaView className= "bg-primary h-full">
+    <SafeAreaView className= "bg-secondary h-full">
       <ScrollView contentContainerStyle={{ height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-        <View className= "w-5/6 h-5/6 justify-center items-center px-5 bg-secondary rounded-2xl">
+        <View className= "w-full min-h-[85vh] justify-center items-center px-5 ">
           <Image
             source={images.logo}
-            className="w-[200px] h-[150]"
+            className="w-[175px] h-[175px]"
             resizeMode="contain"
           />
-          <View className="relative mt-5 items-center">
-            <Text className="text-2xl font-bold text-white text-center">
-              Discover Local Restaurants Around You Now!
+
+          <View className="relative items-center">
+            <Text className="text-3xl font-bold text-white text-center">
+              Discover Local{"\n"}
+              Food with{" "}
+              <Text className="text-3xl, font-bold text-gold-bright">biteswipe</Text>
             </Text>
-            <Text className="font-sm font-pregular text-white text-center mt-3">
-              Yoo Min Park is gay!!!!!!!
+            <Text className="text-base font-pregular text-white text-center mt-7">
+              Don't know what to eat? Quickly find the best places to eat around town with biteswipe!
             </Text>
-            <CustomButton/>
           </View>
+          
+          <CustomButton
+              title="Sign In"
+              handlePress={() => {router.push('/signin')}}
+              containerStyles="w-full mt-5"
+            />
         </View>
       </ScrollView>
+      <StatusBar style='light'/>
     </SafeAreaView>
   );
 }
