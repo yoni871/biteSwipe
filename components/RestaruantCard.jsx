@@ -5,7 +5,6 @@ import * as Animatable from "react-native-animatable"
 import { images } from '../constants'
 import { getRandomRestaurants } from '../lib/fetchFunctions'
 import useFetch from '../lib/useFetch'
-import getLocation from '../lib/getLocation'
 import { CustomButton } from '../components'
 
 const RestaruantCard = () => {
@@ -15,7 +14,6 @@ const RestaruantCard = () => {
     <View>
       <CustomButton
         title="hi"
-        handlePress={getLocation}
       />
     </View>
   )

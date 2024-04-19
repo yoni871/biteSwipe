@@ -1,11 +1,30 @@
 import { StatusBar } from 'expo-status-bar'
+import React, { useState, useEffect } from 'react'
 import { Text, ScrollView , View, Image } from 'react-native'
-import { Redirect, router } from 'expo-router'
+import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
 import { CustomButton } from '../components'
+import * as Location from 'expo-location'
 
 export default function App() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync()
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+      console.log(location);
+    }) ();
+  }, []);
+
   return (
     <SafeAreaView className= "bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%', justifyContent: 'center', alignItems: 'center'}}>
