@@ -13,8 +13,8 @@ const SignIn = () => {
 
   const [isSumbitting, setIsSubmitting] = useState(false)
 
-  const Submit = () => {
-
+  const Submit = async () => {
+    router.replace("/home");
   }
 
   return (

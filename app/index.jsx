@@ -9,7 +9,7 @@ export default function App() {
   return (
     <SafeAreaView className= "bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%', justifyContent: 'center', alignItems: 'center'}}>
-        <View className= "w-full min-h-[85vh] justify-center items-center px-5 ">
+        <View className= "w-full min-h-[85vh] justify-center items-center px-4">
           <Image
             source={images.logo}
             className="w-[175px] h-[175px]"
