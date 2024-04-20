@@ -14,6 +14,9 @@ import rightArrow from "../assets/icons/right-arrow.png";
 import search from "../assets/icons/search.png";
 import share from "../assets/icons/share.png";
 import x from "../assets/icons/x.png";
+import edit from "../assets/icons/edit.png";
+import settings from "../assets/icons/settings.png";
+
 
 export default {
   bookmark,
@@ -31,5 +34,7 @@ export default {
   rightArrow,
   search,
   share,  
-  x
+  x,
+  edit,
+  settings
 };

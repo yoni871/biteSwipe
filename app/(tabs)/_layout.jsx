@@ -17,6 +17,7 @@ const TabIcon = ({ icon, color, focused }) => {
   )
 }
 
+
 const TabsLayout = () => {
   return (
     <>
