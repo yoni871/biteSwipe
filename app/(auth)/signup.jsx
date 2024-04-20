@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
 import { images, icons } from "../../constants"
 import { FormField, CustomButton, CustomIcon } from "../../components"
+const User = require('./users');
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -14,7 +15,27 @@ const SignUp = () => {
 
   const [isSumbitting, setIsSubmitting] = useState(false)
 
-  const Submit = () => {
+  const Submit = async () => {
+    setIsSubmitting(true);
+    try{
+      const newUser = new User({
+        username: form.username,
+        email: form.email,
+        password: form.password
+      });
+      await newUser.save();
+      setForm({
+        username: '',
+        email: '',
+        password: ''
+      });
+      console.log('User registered successfully');
+    }
+    catch (error) {
+      console.error('Error registering user', error);
+    } finally {
+      setIsSubmitting(false);
+    }
 
   }
 
