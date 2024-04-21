@@ -1,9 +1,10 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
+import { FlatList, StyleSheet, Text, TouchableOpacity, View, Image, ScrollView } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from "expo-router";
 import { icons } from "../../constants";
-import { FormField, CustomButton, CustomIcon } from "../../components"
+import { FormField, CustomButton, CustomIcon, HistoryCard } from "../../components"
+import ReactImagePickerEditor, { ImagePickerConf } from 'react-image-picker-editor';
 
 
 const Profile = () => {
@@ -20,14 +21,23 @@ const Profile = () => {
   }
 
   const editprofile = async () => {
-    router.replace("/editprofile");
+    router.navigate("/editprofile")
   }
 
   return (
-    <SafeAreaView className="bg-primary h-full">
-      <FlatList
-      ListHeaderComponent={() => (
-        <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
+    <SafeAreaView className="bg-primary h-full overscroll-none">
+      {/* <FlatList
+        data={places}
+        keyExtractor={(item) => item.$id}
+        renderItem={({ item }) => (
+          <HistoryCard
+            placename={item.placename}
+            address = {item.address}
+            datevisited = {item.datevisited}
+            placephoto = {item.placephoto} />
+        )}
+      ListHeaderComponent={() => ( */}
+        <View className="h-auto w-full flex justify-center items-center mt-12 mb-12 px-4">
 
           <View className="relative w-full flex flex-row">
             <View className="w-1/2 items-start">
@@ -95,13 +105,54 @@ const Profile = () => {
               {CurrentUser.name}
             </Text>
 
-            <View className="w-full items-start mt-6">
+            <View className="w-full items-start mt-6 mb-1">
               <Text className="text-4xl text-white font-pbold">History</Text>
             </View> 
 
+            <View className="h-4/6 w-full rounded-xl">
+              <ScrollView className="rounded-xl">
+                <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />
+                <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />
+                <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />   
+                  <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />  
+                  <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />  
+                  <HistoryCard 
+                  placename="McDonalds"
+                  address = "3333 Random Adress Ave"
+                  datevisited = "4/21/2024"
+                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  />                           
+            </ScrollView>
+            </View>
+
         </View>
-      )}
-      />
+      {/* )}
+      /> */}
     </SafeAreaView>
   )
 }

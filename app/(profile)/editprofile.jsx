@@ -29,9 +29,7 @@ const EditProfile = () => {
   }
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView>
-
-      <View className="relative w-full flex flex-row mt-5">
+      <View className="relative w-full flex flex-row mt-2">
             <View className="w-full items-end">
               <TouchableOpacity
                   onPress={Done}
@@ -40,9 +38,9 @@ const EditProfile = () => {
               </TouchableOpacity>            
               </View> 
           </View>
-        <View className="h-full w-full px-4 justify-center items-center">
+        <View className="h-full w-full px-4 mt-10 items-center">
           <View className="scale-150">
-            <View className="w-20 h-20 border-2 border-amber-500 rounded-full flex justify-center items-center mb-4">
+            <View className="w-20 h-20 border-amber-500 rounded-full flex-items-center mb-4">
               <Image
                 source={{ uri: CurrentUser.profilepic}}
                 className="w-[95%] h-[95%] rounded-full"
@@ -86,7 +84,7 @@ const EditProfile = () => {
               />
 
             </View>
-      </ScrollView>
+
     </SafeAreaView>
   )
 }
