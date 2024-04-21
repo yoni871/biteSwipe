@@ -8,8 +8,6 @@ import { FormField, CustomButton, CustomIcon } from "../../components"
 
 const Profile = () => {
 
-
-
   const CurrentUser = {
     // Users name goes here
     name : "Jungle Kok", 
@@ -19,6 +17,10 @@ const Profile = () => {
 
   const logout = async () => {
     router.replace("//index");
+  }
+
+  const editprofile = async () => {
+    router.replace("/editprofile");
   }
 
   return (
@@ -63,6 +65,8 @@ const Profile = () => {
             </View>
           </View>
 
+          <TouchableOpacity
+            onPress={editprofile}>
           <View className="relative scale-150">
             <View className="w-20 h-20 border-2 border-amber-500 rounded-full flex justify-center items-center">
               <Image
@@ -72,8 +76,10 @@ const Profile = () => {
               />
             </View>
 
-            <View className="border-8 border-white bg-white rounded-full absolute right-0 top-0">
-            <TouchableOpacity>
+            <View 
+            className="border-8 border-white bg-white rounded-full absolute right-0 top-0">
+            <TouchableOpacity
+              onPress={editprofile}>
                 <Image
                   source={icons.edit}
                   resizeMode="contain"
@@ -82,7 +88,8 @@ const Profile = () => {
               </TouchableOpacity>
               </View>
           </View>
-            {/* Users name goes here */}
+          </TouchableOpacity>
+
             <Text
              className="font-pbold text-4xl text-white mt-8">
               {CurrentUser.name}
