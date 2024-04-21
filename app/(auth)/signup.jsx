@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from 'expo-router'
 import { images, icons } from "../../constants"
 import { FormField, CustomButton, CustomIcon } from "../../components"
-const User = require('./users');
+import axios from 'axios';
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -15,29 +15,22 @@ const SignUp = () => {
 
   const [isSumbitting, setIsSubmitting] = useState(false)
 
-  const Submit = async () => {
+  const handleSubmit = async () => {
     setIsSubmitting(true);
-    try{
-      const newUser = new User({
-        username: form.username,
-        email: form.email,
-        password: form.password
-      });
-      await newUser.save();
+    try {
+      await axios.post('/signup', form); 
       setForm({
         username: '',
         email: '',
         password: ''
       });
       console.log('User registered successfully');
-    }
-    catch (error) {
+    } catch (error) {
       console.error('Error registering user', error);
     } finally {
       setIsSubmitting(false);
     }
-
-  }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -82,7 +75,7 @@ const SignUp = () => {
 
           <CustomButton 
             title="Sign Up"
-            handlePress={Submit}
+            handlePress={handleSubmit}
             containerStyles="mt-8"
             isLoading={isSumbitting}
           />

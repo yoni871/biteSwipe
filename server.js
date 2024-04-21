@@ -1,11 +1,32 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
+const mongoose = require("mongoose");
+const User = require('./app/(auth)/users');
+const cors = require('cors');
+
+app.use(cors());
+app.use(express.json());
+
+app.post('/signup', async (req, res) => {
+    try {
+      const newUser = new User({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+      });
+      await newUser.save();
+      res.status(201).send(newUser);
+    } catch (error) {
+      console.error('Error registering user', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const mongoose = require("mongoose");
 const uri = "mongodb+srv://scepti:admin!mongodb@cluster0.j1mrlu1.mongodb.net/users_info?retryWrites=true&w=majority&appName=Cluster0";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => console.log('connected to db'))
+    .then((result) => app.listen(5000))
     .catch((err) => console.log(err));
