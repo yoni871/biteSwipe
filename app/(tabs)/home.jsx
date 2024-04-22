@@ -36,10 +36,10 @@ const Home = () => {
             <Text className="text-3xl text-white font-pbold">biteswipe</Text>
             <Text className="text-xl text-white font-pregular">Welcome, Yoo Min Park</Text>
           </View>
-          <CustomIcon 
+          {/* <CustomIcon 
             icon={icons.options}
             iconStyles={"w-[45px] h-[45px] rounded-2xl"}
-          />
+          /> */}
         </View>
 
         <FlatList 

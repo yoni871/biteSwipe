@@ -4,8 +4,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { router } from "expo-router";
 import { icons } from "../../constants";
 import { FormField, CustomButton, CustomIcon, HistoryCard } from "../../components"
-import ReactImagePickerEditor, { ImagePickerConf } from 'react-image-picker-editor';
-
 
 const Profile = () => {
 
