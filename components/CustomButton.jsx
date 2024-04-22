@@ -4,7 +4,7 @@ import React from 'react'
 const CustomButton = ({ title, handlePress, containerStyles, textStyles, isLoading }) => {
   return (
     <TouchableOpacity 
-      className={`bg-gold-light rounded-xl min-h-[60px] justify-center items-center
+      className={`bg-gold-light rounded-xl w-full min-h-[60] justify-center items-center
       ${containerStyles} ${isLoading ? 'opacity-70' : ''}`}
       onPress={handlePress}
       activeOpacity={0.7}
