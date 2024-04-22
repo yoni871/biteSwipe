@@ -7,7 +7,7 @@ const HistoryCard = ({ placename, address, datevisited, placephoto}) => {
         <Image 
             source={ {uri: placephoto} }
             resizeMode="cover"
-            className="w-full h-full rounded-2xl opacity-10" />
+            className="w-full h-full rounded-2xl opacity-25" />
 
         <View className="w-1/2 flex-col absolute px-4 items-start">
             <Text className="text-2xl text-white font-pbold"

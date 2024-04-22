@@ -1,4 +1,4 @@
-import { View, Text, FlatList, Image } from 'react-native'
+import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect }from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import * as Location from 'expo-location'
@@ -30,8 +30,29 @@ const Home = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <View className="flex my-6 px-4 space-y-6">
-        <View className="flex-row justify-between bg-primary-light rounded-3xl px-4 py-2">
+        <View 
+            className="border-8 border-white bg-white rounded-full absolute left-6 bottom-6 z-40 scale-150 ">
+            <TouchableOpacity>
+                <Image
+                  source={icons.x}
+                  resizeMode="contain"
+                  className="w-7 h-7"
+                  />
+              </TouchableOpacity>
+        </View>
+        <View 
+            className="border-8 border-amber-500 bg-amber-500 rounded-full absolute right-6 bottom-6 z-40 scale-150 ">
+            <TouchableOpacity>
+                <Image
+                  source={icons.heart}
+                  tintColor={"white"}
+                  resizeMode="contain"
+                  className="w-7 h-7 "
+                  />
+              </TouchableOpacity>
+        </View>
+      <View className="flex my-6 space-y-1">
+        <View className="flex-row justify-between rounded-3xl px-4 py-2">
           <View>
             <Text className="text-3xl text-white font-pbold">biteswipe</Text>
             <Text className="text-xl text-white font-pregular">Welcome, Yoo Min Park</Text>
@@ -42,6 +63,7 @@ const Home = () => {
           /> */}
         </View>
 
+        <View className="ml-4">
         <FlatList 
           data={filters}
           horizontal
@@ -49,11 +71,12 @@ const Home = () => {
           renderItem={({ item }) => (
             <CustomButton
               title={item.type}
-              containerStyles={"w-[120px] h-[50px] bg-primary-light mr-3 rounded-3xl"}
-              textStyles={"text-white text-l font-pregular"}
+              containerStyles={"w-[90px] h-1 border-2 border-white bg-primary mr-3 rounded-full"}
+              textStyles={"text-white text-sm font-pregular"}
             />
           )}
         />
+        </View>
 
         <View className="w-full">
           {restaurant && (
@@ -61,7 +84,6 @@ const Home = () => {
               restaurant={restaurant}
             />
           )}
-
         </View>
       </View>
     </SafeAreaView>

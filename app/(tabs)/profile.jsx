@@ -9,7 +9,7 @@ const Profile = () => {
 
   const CurrentUser = {
     // Users name goes here
-    name : "Jungle Kok", 
+    name : "Yoo Min Park", 
     // Users profile picture goes here
     profilepic : "https://ew.com/thmb/BjUrPQmw5dJl5A2TD9BLfwAEcYE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Jungkook-6837e9da24d24d428979a41d6df11012.jpg"
   }
@@ -102,6 +102,10 @@ const Profile = () => {
              className="font-pbold text-4xl text-white mt-8">
               {CurrentUser.name}
             </Text>
+            <Text
+             className="text-xl text-white">
+              Lubbock, TX
+            </Text>
 
             <View className="w-full items-start mt-6 mb-1">
               <Text className="text-4xl text-white font-pbold">History</Text>
@@ -111,39 +115,39 @@ const Profile = () => {
               <ScrollView className="rounded-xl">
                 <HistoryCard 
                   placename="McDonalds"
-                  address = "3333 Random Adress Ave"
+                  address = "102 N University Ave"
                   datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipP_LYJ0sLIA5CT5tDL2qMqGiu4WcRZViGF6DhyM=w421-h240-k-no"
                   />
                 <HistoryCard 
                   placename="McDonalds"
-                  address = "3333 Random Adress Ave"
-                  datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  address = "102 N University Ave"
+                  datevisited = "4/20/2024"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipP_LYJ0sLIA5CT5tDL2qMqGiu4WcRZViGF6DhyM=w421-h240-k-no"
                   />
                 <HistoryCard 
-                  placename="McDonalds"
-                  address = "3333 Random Adress Ave"
-                  datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  placename="Canes"
+                  address = "907 University Ave"
+                  datevisited = "4/19/2024"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipON_xH0EDVrIQkiY5040-HhlW7mk3VfQdJCI1g=w408-h408-k-no"
                   />   
                   <HistoryCard 
-                  placename="McDonalds"
-                  address = "3333 Random Adress Ave"
-                  datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  placename="Chipotle"
+                  address = "2411 Glenna Goodacre"
+                  datevisited = "4/18/2024"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipPqPwWGsb2syUwcMGjKt0rMGXnqy0BImhPn0EWQ=w408-h306-k-no"
                   />  
                   <HistoryCard 
-                  placename="McDonalds"
-                  address = "3333 Random Adress Ave"
-                  datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  placename="The Pecan Grill"
+                  address = "2322 Mac Davis Ln"
+                  datevisited = "4/17/2024"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipPyyg6NCpU0i7i7-cCrgOH4HvCdRbqyrpM7DrkA=w408-h306-k-no"
                   />  
                   <HistoryCard 
-                  placename="McDonalds"
-                  address = "3333 Random Adress Ave"
-                  datevisited = "4/21/2024"
-                  placephoto = "https://nationaltoday.com/wp-content/uploads/2022/08/27-McDonalds-Day-1200x834.jpg"
+                  placename="Taco Bell"
+                  address = "402 Avenue Q"
+                  datevisited = "4/16/2024"
+                  placephoto = "https://lh5.googleusercontent.com/p/AF1QipNd3f9Zp9QjgrX6JpcD2IW8LqbdnBDCpg58Q_Y=w408-h306-k-no"
                   />                           
             </ScrollView>
             </View>

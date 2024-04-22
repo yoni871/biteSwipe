@@ -31,29 +31,32 @@ const RestaruantCard = ({ restaurant }) => {
   ];
 
   return (
-      <View className="bg-primary-light rounded-3xl px-4 py-4">
-        <View className="space-y-1">
+      <View className="rounded-3xl px-4 py-4">
+        <View className="space-y-1 flex-col">
+        <View className="flex-row space-x-3">
           <Text className="text-white text-3xl font-pbold">
             Taqueria Autlan
           </Text>
+          <View className="w-1 h-1 border-8 border-green bg-green rounded-full mt-2"/>
+          </View>
           <Text className="text-white text-base font-pregular">
-            4.2 (131 ratings)
+            3333 Random St Address
           </Text>
-          <Text className="text-white text-base font-pbold">
-            $ | Mexican
+          <Text className="text-white text-base font-pregular mb-2">
+           4.2 (131 ratings) 
           </Text>
         </View>
 
 
         <FlatList
+          className="mb-96 rounded-xl"
           data={pictures}
-          horizontal
           keyExtractor={(item) => item.$key}
           renderItem={({ item }) => (
             <Image
               source={item.uri}
-              className="w-[325px] h-[325px] mr-5 bg-primary rounded-3xl"
-              resizeMode='contain'
+              className="w-[400px] h-[400px] bg-primary "
+              resizeMode='cover'
             />
           )}
         />
@@ -61,13 +64,13 @@ const RestaruantCard = ({ restaurant }) => {
         <View className="px-4 py-4 flex-row justify-between">
           <CustomIcon
             icon={icons.x}
-            iconStyles={"w-[45px] h-[45px] bg-red rounded-2xl "}
+            iconStyles={"w-[45px] h-[45px] bg-red rounded-full "}
 
           />
 
           <CustomIcon 
             icon={icons.heart}
-            iconStyles={"w-[45px] h-[45px] bg-green rounded-2xl "}
+            iconStyles={"w-[45px] h-[45px] bg-green rounded-full "}
           />
 
         </View>

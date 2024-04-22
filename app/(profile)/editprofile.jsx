@@ -9,11 +9,11 @@ const EditProfile = () => {
 
   const CurrentUser = {
     // Users name goes here
-    name : "Jungle Kok", 
+    name : "Yoo Min Park", 
     // Users profile picture goes here
     profilepic : "https://ew.com/thmb/BjUrPQmw5dJl5A2TD9BLfwAEcYE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Jungkook-6837e9da24d24d428979a41d6df11012.jpg",
-    username : "junglekok",
-    email : "junglekok@bts.com"
+    username : "hanni_pham",
+    email : "yoo.park@ttu.edu"
   }
 
   const [form, setForm] = useState({
