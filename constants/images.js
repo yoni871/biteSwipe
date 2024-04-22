@@ -10,6 +10,9 @@ import pizza from "../assets/images/pizza.png"
 import burger from "../assets/images/burger.png"
 import salad from "../assets/images/salad.png"
 import mcdonald from "../assets/images/mcdonald.jpeg"
+import taco1 from '../assets/images/taco1.jpeg'
+import taco2 from '../assets/images/taco2.jpeg'
+import taco3 from '../assets/images/taco3.jpeg'
 export default { 
     profile, 
     thumbnail, 
@@ -22,5 +25,8 @@ export default {
     pizza,
     burger,
     salad,
-    mcdonald
+    mcdonald,
+    taco1,
+    taco2,
+    taco3
 };

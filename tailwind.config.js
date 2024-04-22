@@ -10,10 +10,12 @@ module.exports = {
         },
         secondary: "#E1D5CA",
         white: "#F4F4F5",
+        green: "#16A34A",
+        red: "#E11D48",
         gold: {
           DEFAULT: "#C49450",
           light: "#FFBF10"
-        }
+        },
       },
       fontFamily: {
         pblack: ["ProximaNova-Black", "sans-serif"],
