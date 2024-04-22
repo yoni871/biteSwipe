@@ -4,8 +4,9 @@ const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const User = require('./app/(auth)/user');
 const cors = require('cors');
+const corsOption = {origin: ['http://153.33.75.161:5000'], credentials: true, methods: ["GET", "POST", "PUT", "DELETE"], }
 
-app.use(cors());
+app.use(cors(corsOption));
 app.use(express.json());
 
 app.get('/signup', (req, res) => {

@@ -9,18 +9,36 @@ axios.defaults.baseURL = 'http://153.33.75.161:5000';
 axios.defaults.timeout = 10000;
 
 const SignUp = () => {
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [form, setForm] = useState({
     username: '',
     email: '',
-    password: '',
+    password: ''
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState(null);
+  console.log(form);
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      const response = await axios.post('/signup', form);
+      const response = await axios.post('/signup', {
+        username: form.username,
+        email: form.email,
+        password: form.password
+      });
+      /*const responce = await fetch('http://153.33.75.161:5000/signup', {
+        method: "POST",
+        body: JSON.stringify({
+          "username": form.username,
+          "email": form.email,
+          "password": form.password
+        }), 
+        mode: 'no-cors'
+      });*/
       console.log('User registered successfully:', response.data);
       setForm({ username: '', email: '', password: '' });
       setError(null);
