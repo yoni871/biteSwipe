@@ -19,7 +19,7 @@ const SignUp = () => {
     username: '',
     email: '',
     password: ''
-  });
+  }); 
   console.log(form);
 
   const handleSubmit = async () => {
@@ -30,15 +30,6 @@ const SignUp = () => {
         email: form.email,
         password: form.password
       });
-      /*const responce = await fetch('http://153.33.75.161:5000/signup', {
-        method: "POST",
-        body: JSON.stringify({
-          "username": form.username,
-          "email": form.email,
-          "password": form.password
-        }), 
-        mode: 'no-cors'
-      });*/
       console.log('User registered successfully:', response.data);
       setForm({ username: '', email: '', password: '' });
       setError(null);
