@@ -33,6 +33,7 @@ const SignUp = () => {
       });
       console.log('User registered successfully:', response.data);
       setForm({ username: '', email: '', password: '' });
+      router.replace("/home");
       setError(null);
     } catch (error) {
       console.error('Error registering user:', error);
