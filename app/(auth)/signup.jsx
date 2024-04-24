@@ -1,22 +1,46 @@
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { router } from 'expo-router'
-import { images, icons } from "../../constants"
-import { FormField, CustomButton, CustomIcon } from "../../components"
+import React, { useState } from 'react';
+import { View, Text, ScrollView, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { icons, images } from '../../constants';
+import { Link, router } from 'expo-router'
+import { FormField, CustomButton, CustomIcon } from '../../components';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://153.33.75.161:5000';
+axios.defaults.timeout = 10000;
 
 const SignUp = () => {
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [form, setForm] = useState({
     username: '',
     email: '',
     password: ''
-  })
+  }); 
+  console.log(form);
 
-  const [isSumbitting, setIsSubmitting] = useState(false)
-
-  const Submit = () => {
-
-  }
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    try {
+      const response = await axios.post('/signup', {
+        username: form.username,
+        email: form.email,
+        password: form.password
+      });
+      console.log('User registered successfully:', response.data);
+      setForm({ username: '', email: '', password: '' });
+      setError(null);
+    } catch (error) {
+      console.error('Error registering user:', error);
+      setError('Failed to register user. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -61,9 +85,9 @@ const SignUp = () => {
 
           <CustomButton 
             title="Sign Up"
-            handlePress={Submit}
+            handlePress={handleSubmit}
             containerStyles="mt-8"
-            isLoading={isSumbitting}
+            isLoading={isSubmitting}
           />
 
 
