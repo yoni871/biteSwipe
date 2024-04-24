@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, ScrollView, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { icons, images } from '../../constants';
+import { Link, router } from 'expo-router'
 import { FormField, CustomButton, CustomIcon } from '../../components';
 import axios from 'axios';
 
