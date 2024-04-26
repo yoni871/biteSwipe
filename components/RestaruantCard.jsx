@@ -1,27 +1,10 @@
 import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import * as Animatable from "react-native-animatable"
 
 import { images } from '../constants'
 import { CustomIcon } from '../components'
 import { icons } from '../constants'
-
-const Photos = ({ item }) => {
-  return (
-    <Animatable
-    className="mr-5"
-    >
-      <TouchableOpacity
-        className="flex justify-center items-center"
-        activeOpacity={0.7}
-      >
-        <Image
-          source={images.burger}
-        />
-      </TouchableOpacity>
-    </Animatable>
-  );
-};
+import useFetch from '../lib/useFetch'
 
 const RestaruantCard = ({ restaurant }) => {
   const pictures = [
@@ -30,14 +13,16 @@ const RestaruantCard = ({ restaurant }) => {
     { key: '3', uri: images.taco3 }
   ];
 
+  console.log(restaurant);
+
   return (
       <View className="rounded-3xl px-4 py-4">
         <View className="space-y-1 flex-col">
-        <View className="flex-row space-x-3">
-          <Text className="text-white text-3xl font-pbold">
-            Taqueria Autlan
-          </Text>
-          <View className="w-1 h-1 border-8 border-green bg-green rounded-full mt-2"/>
+          <View className="flex-row space-x-3">
+            <Text className="text-white text-3xl font-pbold">
+              Taqueria Autlan
+            </Text>
+            <View className="w-1 h-1 border-8 border-green bg-green rounded-full mt-2"/>
           </View>
           <Text className="text-white text-base font-pregular">
             3333 Random St Address
