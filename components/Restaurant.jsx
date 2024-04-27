@@ -6,7 +6,7 @@ import { icons } from '../constants'
 import useFetch from '../lib/useFetch'
 import { TouchableOpacity } from 'react-native-web'
 
-const Restaurant = () => {
+const Restaurant = (restaurant) => {
   const {data, loading, error, refetch} = useFetch();
 
   const onRefresh = useCallback(() => {

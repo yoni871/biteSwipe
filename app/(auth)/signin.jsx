@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { Link, router } from 'expo-router'
 import { images, icons } from "../../constants"
 import { FormField, CustomButton, CustomIcon } from "../../components"
+import useFetch from '../../lib/useFetch'
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -53,7 +54,9 @@ const SignIn = () => {
 
           <CustomButton 
             title="Log In"
-            handlePress={Submit}
+            handlePress={
+              Submit
+            }
             containerStyles="mt-8"
             isLoading={isSumbitting}
           />

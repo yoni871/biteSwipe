@@ -6,9 +6,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../constants'
 import { CustomButton } from '../components'
 import * as Location from 'expo-location'
+import useFetch from '../lib/useFetch'
 
 export default function App() {
-
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync()
