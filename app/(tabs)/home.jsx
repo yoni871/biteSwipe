@@ -2,7 +2,7 @@ import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native'
 import React, { useState, useEffect }from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-import { CustomButton, CustomIcon, Restaurant, RestaurantCard } from '../../components'
+import { CustomButton, Restaurant } from '../../components'
 import { images, icons } from '../../constants'
 
 const Home = () => {

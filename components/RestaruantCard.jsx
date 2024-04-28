@@ -19,15 +19,15 @@ const RestaruantCard = ({ restaurant }) => {
         <View className="space-y-1 flex-col">
           <View className="flex-row space-x-3">
             <Text className="text-white text-3xl font-pbold">
-            {restaurant[0].name}
+            {restaurant?.name}
             </Text>
             <View className="w-1 h-1 border-8 border-green bg-green rounded-full mt-2"/>
           </View>
           <Text className="text-white text-base font-pregular">
-            {restaurant[0].location.address1}
+            {restaurant?.location.address1}
           </Text>
           <Text className="text-white text-base font-pregular mb-2">
-           {restaurant[0].rating} ★ ({restaurant[0].review_count} reviews) {restaurant[0].price}
+           {restaurant?.rating} ★ ({restaurant?.review_count} reviews) {restaurant?.price}
           </Text>
         </View>
 

@@ -2,11 +2,9 @@ import { View, Text, ActivityIndicator } from 'react-native'
 import React, { useCallback } from 'react'
 
 import { RestaurantCard, CustomButton } from '.'
-import { icons } from '../constants'
 import useFetch from '../lib/useFetch'
-import { TouchableOpacity } from 'react-native-web'
 
-const Restaurant = (restaurant) => {
+const Restaurant = () => {
   const {data, loading, error, refetch} = useFetch();
 
   const onRefresh = useCallback(() => {
@@ -26,9 +24,7 @@ const Restaurant = (restaurant) => {
 					/>
 				</View>
 			) : (
-				<RestaurantCard
-					restaurant={data}
-				/>
+				<RestaurantCard restaurant={data}/>
 			)}
     </View>
   )
