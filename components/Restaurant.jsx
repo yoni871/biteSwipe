@@ -1,8 +1,10 @@
-import { View, Text, ActivityIndicator } from 'react-native'
+import { View, Text, ActivityIndicator, TouchableOpacity, Image} from 'react-native'
 import React, { useCallback } from 'react'
 
 import { RestaurantCard, CustomButton } from '.'
 import useFetch from '../lib/useFetch'
+import { images, icons } from '../constants'
+
 
 const Restaurant = () => {
   const {data, loading, error, refetch} = useFetch();
@@ -24,6 +26,7 @@ const Restaurant = () => {
 					/>
 				</View>
 			) : (
+				
 				<RestaurantCard restaurant={data}/>
 			)}
     </View>

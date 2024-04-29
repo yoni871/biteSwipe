@@ -14,6 +14,7 @@ const RestaruantCard = ({ restaurant }) => {
     { key: '3', uri: images.taco3 }
   ];
   console.log(restaurant)
+
   return (
       <View className="rounded-3xl px-4 py-4 mb-[500px]">
         <View className="space-y-1 flex-col">
@@ -31,7 +32,7 @@ const RestaruantCard = ({ restaurant }) => {
           </Text>
         </View>
 
-        <FlatList
+        {/* <FlatList
           className="mb-[40px] rounded-xl"
           data={pictures}
           keyExtractor={(item) => item.$key}
@@ -43,8 +44,14 @@ const RestaruantCard = ({ restaurant }) => {
               resizeMode='cover'
             />
           )}
-        />
+        /> */}
+
+        <Image
+          className="w-[360px] h-full bg-primary rounded-xl"
+          resizeMode='cover'
+          source={{uri : restaurant?.image_url}} />
       </View>
+      
   );
 };
 

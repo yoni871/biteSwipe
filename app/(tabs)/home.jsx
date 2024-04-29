@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { CustomButton, Restaurant } from '../../components'
 import { images, icons } from '../../constants'
+import ReactDOM from "react-dom";
+import useFetch from '../../lib/useFetch'
 
 const Home = () => {
   const filters = [
@@ -14,11 +16,16 @@ const Home = () => {
     { key: '5', type: 'Mediterranean' },
   ];
 
+  const {data, loading, error, refetch,} = useFetch();
+
+  const rest = <Restaurant/>
+
   return (
     <SafeAreaView className="bg-primary h-full">
-        <View 
+        <View  
           className="border-8 border-white bg-white rounded-full absolute left-6 bottom-6 z-40 scale-150 ">
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={ refetch } >
             <Image
               source={icons.x}
               resizeMode="contain"
@@ -61,7 +68,7 @@ const Home = () => {
         </View>
 
         <View className="w-full">
-          <Restaurant />
+          {rest}
         </View>
       </View>
     </SafeAreaView>
