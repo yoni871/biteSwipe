@@ -73,6 +73,21 @@ const TabsLayout = () => {
             )
           }}
         />
+      
+      <Tabs.Screen 
+          name="LikedRestaurants"
+          options={{
+            title: 'LikedRestaurants',
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon 
+                icon={icons.heart}
+                color={color}
+                focused={focused}
+              />
+            )
+          }}
+        />
       </Tabs>
       <StatusBar style="light"/>
     </>

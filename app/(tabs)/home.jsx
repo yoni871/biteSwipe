@@ -6,6 +6,8 @@ import { CustomButton, CustomIcon, Restaurant } from '../../components'
 import { images, icons } from '../../constants'
 import ReactDOM from "react-dom";
 import useFetch from '../../lib/useFetch'
+import { router } from 'expo-router'
+
 
 const Home = () => {
   const filters = [
@@ -45,6 +47,7 @@ const Home = () => {
           <View>
             <Text className="text-3xl text-white font-pbold">biteswipe</Text>
             <Text className="text-xl text-white font-pregular">Welcome, Yoo Min Park</Text>
+
           </View>
         </View>
 
@@ -70,5 +73,6 @@ const Home = () => {
     </SafeAreaView>
   )
 }
+
 
 export default Home

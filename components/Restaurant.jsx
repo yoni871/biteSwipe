@@ -29,13 +29,13 @@ const Restaurant = () => {
 			<RestaurantCard restaurant={data}/>
 		)}
 		<CustomIcon 
-          containerStyles={"border-8 border-white bg-white rounded-full absolute left-6 scale-150"}
+          containerStyles={"border-8 border-white bg-white rounded-full absolute left-6 top-80 scale-150"}
           icon={icons.x}
           iconStyles={"w-7 h-7"}
           handlePress={onRefresh}
         />
         <CustomIcon
-          containerStyles={"border-8 border-gold-light bg-gold-light rounded-full absolute right-6 scale-150"}
+          containerStyles={"border-8 border-gold-light bg-gold-light rounded-full absolute right-6 top-80 scale-150"}
           icon={icons.heart}
           iconStyles={"w-7 h-7"}
           color={"#F4F4F5"}
